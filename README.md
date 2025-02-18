@@ -1,2 +1,2 @@
 # terraform-library
-This project manager all my git repositories
+This is my terraform library. It contains all my terraform modules
