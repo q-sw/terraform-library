@@ -15,19 +15,19 @@ variable "networks" {
     network = object({
       name        = string
       enable_ipv6 = bool
-      asn         = number
+      asn         = optional(number, 64512)
       subnets = list(object({
         name       = string
         cidr       = string
         region     = string
         stack_type = string # "IPV4_ONLY" or "IPV4_IPV6"
       }))
-      firewall_rules = list(object({
+      firewall_rules = optional(list(object({
         name         = string
         protocol     = string
         ports        = list(string)
         from_sources = list(string)
-      }))
+      })), [])
     })
   }))
   description = "A complex map defining the VPC topology, including subnets (IPv4/IPv6 Dual-Stack) and firewall rules."
