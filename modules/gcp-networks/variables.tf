@@ -14,13 +14,13 @@ variable "networks" {
   type = map(object({
     network = object({
       name        = string
-      enable_ipv6 = bool
+      enable_ipv6 = optional(bool, false)
       asn         = optional(number, 64512)
       subnets = list(object({
         name       = string
         cidr       = string
         region     = string
-        stack_type = string # "IPV4_ONLY" or "IPV4_IPV6"
+        stack_type = optional(string, "IPV4_ONLY") # "IPV4_ONLY" or "IPV4_IPV6"
       }))
       firewall_rules = optional(list(object({
         name         = string
