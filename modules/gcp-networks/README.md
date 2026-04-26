@@ -1,6 +1,6 @@
-# Module : GCP Networks (Multi-DC ISR-Nix)
+# Module : GCP Networks
 
-Ce module permet de provisionner des VPC isolés (DC1/DC2), des sous-réseaux IPv4/IPv6 dual-stack, des routeurs Cloud NAT pour l'accès Internet (admin) et des règles de firewall.
+Ce module permet de provisionner des VPC, des sous-réseaux IPv4/IPv6 dual-stack, des routeurs Cloud NAT pour l'accès Internet et des règles de firewall.
 
 ## Caractéristiques Clés
 
@@ -14,7 +14,7 @@ Ce module permet de provisionner des VPC isolés (DC1/DC2), des sous-réseaux IP
 module "networks" {
   source     = "../../modules/gcp-networks"
   project_id = "my-project-id"
-  
+
   networks = {
     "dc1" = {
       network = {

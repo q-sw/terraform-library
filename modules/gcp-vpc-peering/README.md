@@ -1,11 +1,11 @@
-# Module : GCP VPC Peering (SRE ISR-Nix)
+# Module : GCP VPC Peering
 
-Ce module établit une liaison bidirectionnelle sécurisée entre deux réseaux VPC sur Google Cloud Platform. Il est utilisé pour simuler le backbone MPLS entre différents centres de données (DC1 <-> DC2).
+Ce module établit une liaison bidirectionnelle sécurisée entre deux réseaux VPC sur Google Cloud Platform.
 
 ## Caractéristiques
 
 - **Bidirectionnel** : Crée automatiquement les deux ressources de peering nécessaires.
-- **Routage Personnalisé** : Gère l'export et l'import des routes personnalisées (utile pour le routage BGP Cilium).
+- **Routage Personnalisé** : Gère l'export et l'import des routes personnalisées.
 - **Dépendance explicite** : Garantit que le premier lien est initié avant le second pour éviter les erreurs de state dans Terraform.
 
 ## Utilisation

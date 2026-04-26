@@ -1,12 +1,10 @@
-# Module : GCP VMs (NixOS ISR-Nix)
+# Module : GCP VMs
 
-Ce module permet de provisionner des instances de calcul GCE conçues pour faire tourner NixOS de manière immuable et souveraine.
+Ce module permet de provisionner des instances GCE.
 
 ## Caractéristiques Clés
 
-- **Multi-NIC (RFC-001)** : Supporte plusieurs interfaces réseau par VM (ex: Admin IPv4 + Business IPv6).
-- **Images Personnalisées** : Optimisé pour le déploiement d'images NixOS générées par `nixos-generators`.
-- **Nomenclature ISR-Nix** : Permet de créer des instances Pet (statiques) et Cattle (scalables).
+- **Multi-NIC (RFC-001)** : Supporte plusieurs interfaces réseau par VM.
 - **Sécurité** : `can_ip_forward` est géré par tag, et le cycle de vie ignore les clés SSH injectées après le bootstrap.
 
 ## Utilisation
@@ -15,7 +13,7 @@ Ce module permet de provisionner des instances de calcul GCE conçues pour faire
 module "vms" {
   source     = "../../modules/gcp-vms"
   project_id = "my-project-id"
-  
+
   vms = {
     "hub-mgmt" = {
       name         = "hub-mgmt-01"

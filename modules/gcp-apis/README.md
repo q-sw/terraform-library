@@ -1,4 +1,4 @@
-# Module : GCP APIs (SRE ISR-Nix)
+# Module : GCP APIs
 
 Ce module permet d'activer de manière granulaire et déclarative les APIs Google Cloud Platform nécessaires pour le projet.
 
