@@ -21,6 +21,7 @@
             terraform
             tflint
             checkov
+            vault
 
             # Go (pour Terratest)
             go
