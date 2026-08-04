@@ -62,6 +62,7 @@ go test -v .
 | `gcp-vpc-peering` | Liaison bidirectionnelle sécurisée entre deux VPCs (simule backbone MPLS) | `modules/gcp-vpc-peering` |
 | `gcp-vms` | Provisionnement de VMs GCE multi-NIC | `modules/gcp-vms` |
 | `github-repository-manager` | Gestion automatisée des dépôt GitHub (repo, branches, protections) | `modules/github-repository-manager` |
+| `vault-pki` | Configuration d'une PKI hiérarchique (Root et Sub CAs) sur HashiCorp Vault | `modules/vault-pki` |
 
 ## Structure
 
@@ -81,8 +82,15 @@ terraform-library/
 │   │   └── ...
 │   ├── gcp-vms/
 │   │   └── ...
-│   └── github-repository-manager/
-│       └── ...
+│   ├── github-repository-manager/
+│   │   └── ...
+│   └── vault-pki/
+│       ├── main.tf
+│       ├── variables.tf
+│       ├── outputs.tf
+│       ├── versions.tf
+│       ├── README.md
+│       └── tests/
 ├── flake.nix
 └── README.md
 ```
