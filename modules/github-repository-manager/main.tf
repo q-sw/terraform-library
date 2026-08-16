@@ -34,23 +34,3 @@ resource "github_branch_protection" "master" {
     required_approving_review_count = var.enforce_admins ? 1 : 0
   }
 }
-
-resource "github_branch" "development" {
-  repository    = github_repository.repository.name
-  branch        = "dev"
-  source_branch = github_repository.repository.default_branch
-}
-
-resource "github_branch_protection" "development" {
-  count               = var.visibility_mode == "public" ? 1 : 0
-  repository_id       = github_repository.repository.node_id
-  pattern             = "dev"
-  allows_deletions    = false
-  allows_force_pushes = false
-
-  enforce_admins = var.enforce_admins
-
-  required_pull_request_reviews {
-    required_approving_review_count = var.enforce_admins ? 1 : 0
-  }
-}

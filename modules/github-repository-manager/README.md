@@ -27,8 +27,6 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [github_branch.development](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) | resource |
-| [github_branch_protection.development](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_protection) | resource |
 | [github_branch_protection.master](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_protection) | resource |
 | [github_repository.repository](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 
@@ -36,6 +34,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_enforce_admins"></a> [enforce\_admins](#input\_enforce\_admins) | Whether to enforce branch protections for administrators. Set to true for multi-contributor projects. | `bool` | `false` | no |
 | <a name="input_gitignore_template"></a> [gitignore\_template](#input\_gitignore\_template) | the name of the gitignore to use, all list in https://github.com/github/gitignore | `string` | n/a | yes |
 | <a name="input_repository_description"></a> [repository\_description](#input\_repository\_description) | Small description of the repository | `string` | n/a | yes |
 | <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | The name of github repository | `string` | n/a | yes |
