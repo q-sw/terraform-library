@@ -5,5 +5,5 @@ output "instance_ids" {
 output "instance_ips" {
   value = { for k, v in google_compute_instance.instances : k => {
     network_interface = v.network_interface
-  }}
+  } }
 }

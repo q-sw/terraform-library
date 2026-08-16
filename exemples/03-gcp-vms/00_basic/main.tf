@@ -43,7 +43,7 @@ module "gcp_vms" {
           stack_type    = "IPV4_ONLY"
         }
       ]
-      tags = []
+      tags     = []
       metadata = {}
     }
   }

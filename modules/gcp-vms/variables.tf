@@ -22,7 +22,7 @@ variable "vms" {
     tags = list(string)
 
     # Metadata pour l'initialisation (SSH keys, etc.)
-    metadata = map(string)
+    metadata    = map(string)
     nested_virt = optional(bool, false)
   }))
   description = "A map of virtual machines to provision, supporting multi-NIC and custom images."
