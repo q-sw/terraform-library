@@ -74,4 +74,21 @@ func TestVMModule(t *testing.T) {
 		}
 		assert.True(t, foundEnv, "La metadata 'env: test' est manquante sur la VM simple")
 	})
+
+	// --- TEST 4 : Virtualisation Imbriquée ---
+	t.Run("NestedVirtualization", func(t *testing.T) {
+		router, err := computeService.Instances.Get(projectID, zone, "test-vm-router").Do()
+		assert.NoError(t, err)
+		simple, err := computeService.Instances.Get(projectID, zone, "test-vm-simple").Do()
+		assert.NoError(t, err)
+
+		// Vérification que nested virtualization est activée sur router (nested_virt = true)
+		assert.NotNil(t, router.AdvancedMachineFeatures, "AdvancedMachineFeatures ne doit pas être nil sur router")
+		assert.True(t, router.AdvancedMachineFeatures.EnableNestedVirtualization, "La virtualisation imbriquée doit être activée pour le routeur")
+
+		// Vérification qu'elle est désactivée sur simple (valeur par défaut)
+		if simple.AdvancedMachineFeatures != nil {
+			assert.False(t, simple.AdvancedMachineFeatures.EnableNestedVirtualization, "La virtualisation imbriquée doit être désactivée par défaut pour la VM simple")
+		}
+	})
 }

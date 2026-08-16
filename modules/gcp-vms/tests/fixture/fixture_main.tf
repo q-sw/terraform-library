@@ -42,6 +42,7 @@ module "vms" {
       boot_disk_size_gb = 20
       tags              = ["router"] # Doit activer can_ip_forward
       metadata          = { "role" = "gateway" }
+      nested_virt       = true
       network_interfaces = [{
         subnetwork_id = "projects/${var.project_id}/regions/europe-west9/subnetworks/subnet-dual"
         nic_type      = "GVNIC"

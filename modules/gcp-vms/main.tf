@@ -33,6 +33,10 @@ resource "google_compute_instance" "instances" {
   # Sécurité : Bloquer l'IP forwarding par défaut (sauf si configuré via metadata)
   can_ip_forward = contains(each.value.tags, "router") ? true : false
 
+  advanced_machine_features {
+    enable_nested_virtualization = each.value.nested_virt
+  }
+
   service_account {
     scopes = ["cloud-platform"]
   }
