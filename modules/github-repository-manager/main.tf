@@ -30,7 +30,11 @@ resource "github_branch_protection" "master" {
   allows_force_pushes = false
 
   enforce_admins = var.enforce_admins
-  required_pull_request_reviews {
-    required_approving_review_count = var.enforce_admins ? 1 : 0
+
+  dynamic "required_pull_request_reviews" {
+    for_each = var.require_pull_request ? [1] : []
+    content {
+      required_approving_review_count = var.required_approving_review_count
+    }
   }
 }

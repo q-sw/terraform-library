@@ -38,6 +38,8 @@ No modules.
 | <a name="input_gitignore_template"></a> [gitignore\_template](#input\_gitignore\_template) | the name of the gitignore to use, all list in https://github.com/github/gitignore | `string` | n/a | yes |
 | <a name="input_repository_description"></a> [repository\_description](#input\_repository\_description) | Small description of the repository | `string` | n/a | yes |
 | <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | The name of github repository | `string` | n/a | yes |
+| <a name="input_require_pull_request"></a> [require\_pull\_request](#input\_require\_pull\_request) | Whether to require a pull request before merging. Set to false to allow direct pushes. | `bool` | `true` | no |
+| <a name="input_required_approving_review_count"></a> [required\_approving\_review\_count](#input\_required\_approving\_review\_count) | Number of approving reviews required to merge a pull request. Set to 0 for solo projects. | `number` | `0` | no |
 | <a name="input_visibility_mode"></a> [visibility\_mode](#input\_visibility\_mode) | The visibility of the repository, accept private or public | `string` | n/a | yes |
 
 ## Outputs

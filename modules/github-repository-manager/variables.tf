@@ -27,3 +27,15 @@ variable "enforce_admins" {
   description = "Whether to enforce branch protections for administrators. Set to true for multi-contributor projects."
   default     = false
 }
+
+variable "require_pull_request" {
+  type        = bool
+  description = "Whether to require a pull request before merging. Set to false to allow direct pushes."
+  default     = true
+}
+
+variable "required_approving_review_count" {
+  type        = number
+  description = "Number of approving reviews required to merge a pull request. Set to 0 for solo projects."
+  default     = 0
+}
